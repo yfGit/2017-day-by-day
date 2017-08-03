@@ -63,6 +63,10 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIView *containerView = transitionContext.containerView;
+    UIViewController *vc = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    NSLog(@"--->    %d",vc.isBeingPresented);
+    NSLog(@"move to %d",vc.isMovingToParentViewController);
+    NSLog(@"move from %d",vc.isMovingFromParentViewController);
     /*
     if (CGPointEqualToPoint(self.startPoint, CGPointZero)) {
         <#配置PUSH返回键时的动画中心点#>
@@ -143,5 +147,18 @@
     return CGRectMake(0, 0, offset, offset);
 }
 
+
+
+/*
+ 没有Push pop
+ 
+ UIViewController
+ 
+ @property(nonatomic, readonly, getter=isBeingPresented) BOOL beingPresented NS_AVAILABLE_IOS(5_0);
+ @property(nonatomic, readonly, getter=isBeingDismissed) BOOL beingDismissed NS_AVAILABLE_IOS(5_0);
+ 
+ @property(nonatomic, readonly, getter=isMovingToParentViewController) BOOL movingToParentViewController NS_AVAILABLE_IOS(5_0);
+ @property(nonatomic, readonly, getter=isMovingFromParentViewController) BOOL movingFromParentViewController NS_AVAILABLE_IOS(5_0);
+ */
 
 @end

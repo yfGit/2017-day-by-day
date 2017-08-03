@@ -21,6 +21,9 @@
 		BF8C142E1EA5A22300C75243 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C142D1EA5A22300C75243 /* TableViewController.m */; };
 		BF8C14311EA5AB4400C75243 /* InsideThePushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C14301EA5AB4400C75243 /* InsideThePushTransition.m */; };
 		BF8C14341EA5AB8B00C75243 /* YFTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C14331EA5AB8B00C75243 /* YFTransition.m */; };
+		BFA22C6D1EA9CEAF00F89D01 /* SnapCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA22C6C1EA9CEAF00F89D01 /* SnapCollectionController.m */; };
+		BFA22C701EA9CEDC00F89D01 /* SnapCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA22C6F1EA9CEDC00F89D01 /* SnapCollectionViewCell.m */; };
+		BFA22C721EA9CF4900F89D01 /* SnapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA22C711EA9CF4900F89D01 /* SnapCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,11 @@
 		BF8C14301EA5AB4400C75243 /* InsideThePushTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsideThePushTransition.m; sourceTree = "<group>"; };
 		BF8C14321EA5AB8B00C75243 /* YFTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFTransition.h; sourceTree = "<group>"; };
 		BF8C14331EA5AB8B00C75243 /* YFTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFTransition.m; sourceTree = "<group>"; };
+		BFA22C6B1EA9CEAF00F89D01 /* SnapCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapCollectionController.h; sourceTree = "<group>"; };
+		BFA22C6C1EA9CEAF00F89D01 /* SnapCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapCollectionController.m; sourceTree = "<group>"; };
+		BFA22C6E1EA9CEDC00F89D01 /* SnapCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapCollectionViewCell.h; sourceTree = "<group>"; };
+		BFA22C6F1EA9CEDC00F89D01 /* SnapCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnapCollectionViewCell.m; sourceTree = "<group>"; };
+		BFA22C711EA9CF4900F89D01 /* SnapCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnapCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,11 @@
 				BF8C142D1EA5A22300C75243 /* TableViewController.m */,
 				BF636D301EA0B27D009F39B3 /* PresentController.h */,
 				BF636D311EA0B27D009F39B3 /* PresentController.m */,
+				BFA22C6B1EA9CEAF00F89D01 /* SnapCollectionController.h */,
+				BFA22C6C1EA9CEAF00F89D01 /* SnapCollectionController.m */,
+				BFA22C6E1EA9CEDC00F89D01 /* SnapCollectionViewCell.h */,
+				BFA22C6F1EA9CEDC00F89D01 /* SnapCollectionViewCell.m */,
+				BFA22C711EA9CF4900F89D01 /* SnapCollectionViewCell.xib */,
 				BF8C14351EA5ACCF00C75243 /* Help */,
 				BF636D291EA0ABB2009F39B3 /* Transition */,
 				BF636D281EA0A20E009F39B3 /* Other */,
@@ -303,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFA22C721EA9CF4900F89D01 /* SnapCollectionViewCell.xib in Resources */,
 				BF636D051EA0A207009F39B3 /* LaunchScreen.storyboard in Resources */,
 				BF636D021EA0A207009F39B3 /* Assets.xcassets in Resources */,
 				BF636D001EA0A207009F39B3 /* Main.storyboard in Resources */,
@@ -332,6 +346,7 @@
 			files = (
 				BF636D2C1EA0AC0C009F39B3 /* DotZoomTransition.m in Sources */,
 				BF636D321EA0B27D009F39B3 /* PresentController.m in Sources */,
+				BFA22C6D1EA9CEAF00F89D01 /* SnapCollectionController.m in Sources */,
 				BF8C142E1EA5A22300C75243 /* TableViewController.m in Sources */,
 				BF636CFA1EA0A207009F39B3 /* AppDelegate.m in Sources */,
 				BF636CF71EA0A207009F39B3 /* main.m in Sources */,
@@ -339,6 +354,7 @@
 				BF8C14311EA5AB4400C75243 /* InsideThePushTransition.m in Sources */,
 				BF10D0D11EA3BC14000C254B /* DotMaskTransition.m in Sources */,
 				BF636D2F1EA0B254009F39B3 /* UIViewController+TouchPoint.m in Sources */,
+				BFA22C701EA9CEDC00F89D01 /* SnapCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
