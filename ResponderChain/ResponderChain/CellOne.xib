@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" userLabel="CellOne" customClass="CellOne">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60a-OZ-UOS">
+                        <rect key="frame" x="15" y="15" width="80" height="30"/>
+                        <color key="backgroundColor" red="0.36029730902777779" green="0.60614691840277779" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="L3n-ms-vbw"/>
+                        </constraints>
+                        <state key="normal" title="PUSH">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eNH-XB-Nju"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qs9-KB-d41" customClass="CustomView">
+                        <rect key="frame" x="125" y="0.0" width="195" height="59.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="60a-OZ-UOS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="OEz-C6-6YN"/>
+                    <constraint firstItem="Qs9-KB-d41" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YfS-8C-Ku2"/>
+                    <constraint firstItem="60a-OZ-UOS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eIo-TX-MbC"/>
+                    <constraint firstAttribute="bottom" secondItem="Qs9-KB-d41" secondAttribute="bottom" id="rpW-m7-N54"/>
+                    <constraint firstAttribute="trailing" secondItem="Qs9-KB-d41" secondAttribute="trailing" id="y8p-gg-VeE"/>
+                    <constraint firstItem="Qs9-KB-d41" firstAttribute="leading" secondItem="60a-OZ-UOS" secondAttribute="trailing" constant="30" id="ycg-ie-gcf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="34" y="13"/>
+        </tableViewCell>
+    </objects>
+</document>
