@@ -8,14 +8,12 @@
 
 #import "CellTwo.h"
 #import "UIResponder+Router.h"
-#import "CellUserInfo.h"
+
 
 
 NSString *const en_CellTwoA = @"en_CellTwoA";
 NSString *const en_CellTwoB = @"en_CellTwoB";
 
-NSString *const aTitle      = @"aTitle";
-NSString *const aIndexPath  = @"aIndexPath";
 
 
 @implementation CellTwo
@@ -28,16 +26,25 @@ NSString *const aIndexPath  = @"aIndexPath";
 
 - (IBAction)a:(id)sender {
     [self routerEventWithName:en_CellTwoA userInfo:@{
-                                                     aTitle : @"cellB_PUSH"
+                                                     @"title" : @"cellB_PUSH"
                                                      }];
 }
 
 - (IBAction)b:(id)sender {
     [self routerEventWithName:en_CellTwoB userInfo:@{
-                                                     aTitle     : @"cellB_PRESENT",
-                                                     aIndexPath : [NSIndexPath indexPathForRow:arc4random()%100 inSection:arc4random()%10]
+                                                     @"title"     : @"cellB_PRESENT",
+                                                     @"indexPath" : [NSIndexPath indexPathForRow:arc4random()%100 inSection:arc4random()%10]
                                                       }];
 }
 
+/* 如果当前类处理或装饰就调用方法, 事件继续传递调用 super
+   不做任何处理不用调下面的方法
+ */
+- (void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo
+{
+    // logic
+    
+    [super routerEventWithName:eventName userInfo:userInfo];
+}
 
 @end

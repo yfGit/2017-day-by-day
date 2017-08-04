@@ -45,7 +45,6 @@
 		BF32D8601F32ED9F00175D31 /* CellTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellTwo.xib; path = ../CellTwo.xib; sourceTree = "<group>"; };
 		BF32D8641F3302A500175D31 /* NSInvocation+Argument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+Argument.h"; sourceTree = "<group>"; };
 		BF32D8651F3302A500175D31 /* NSInvocation+Argument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+Argument.m"; sourceTree = "<group>"; };
-		BF32D8671F33059D00175D31 /* CellUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellUserInfo.h; sourceTree = "<group>"; };
 		BF32D8681F3314DE00175D31 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		BF32D8691F3314DE00175D31 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		BF32D86B1F3314E600175D31 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
@@ -90,9 +89,6 @@
 				BF32D8721F331EA000175D31 /* EventProxy.m */,
 				BF32D8561F32BA1B00175D31 /* UIResponder+Router.h */,
 				BF32D8571F32BA1B00175D31 /* UIResponder+Router.m */,
-				BF32D8641F3302A500175D31 /* NSInvocation+Argument.h */,
-				BF32D8651F3302A500175D31 /* NSInvocation+Argument.m */,
-				BF32D8671F33059D00175D31 /* CellUserInfo.h */,
 				BF32D8371F32B91900175D31 /* Supporting Files */,
 			);
 			path = ResponderChain;
@@ -101,6 +97,8 @@
 		BF32D8371F32B91900175D31 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF32D8641F3302A500175D31 /* NSInvocation+Argument.h */,
+				BF32D8651F3302A500175D31 /* NSInvocation+Argument.m */,
 				BF32D8401F32B91900175D31 /* Main.storyboard */,
 				BF32D8431F32B91900175D31 /* Assets.xcassets */,
 				BF32D8451F32B91900175D31 /* LaunchScreen.storyboard */,
@@ -370,6 +368,7 @@
 				BF32D84D1F32B91900175D31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

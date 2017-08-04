@@ -9,8 +9,6 @@
 #import "NSInvocation+Argument.h"
 #import <objc/runtime.h>
 
-#import "CellUserInfo.h"
-
 @implementation NSInvocation (Argument)
 
 
@@ -19,10 +17,10 @@
 
 /**
  参数怎么赋值
- 1. 参数count不好
- 2. 参数type也不好
+ 1. 参数count不好  ❌
+ 2. 参数type也不好 ❌
  3. 直接不赋值, 外部直接用userInfo? 
- 4. 还有其它什么好方式?
+ 4. 还有其它什么好方式? ❌
  
  */
 - (void)setupArguments:(NSDictionary *)arguments

@@ -10,7 +10,6 @@
 #import "CellOne.h"
 #import "CellTwo.h"
 #import "UIResponder+Router.h"
-#import "NSInvocation+Argument.h"
 #import "EventProxy.h"
 
 #define kWidth   [UIScreen mainScreen].bounds.size.width
@@ -22,6 +21,7 @@ extern NSString *const en_CellOneB;
 extern NSString *const en_CellTwoA;
 extern NSString *const en_CellTwoB;
 
+
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSDictionary *eventStrategy;
@@ -30,7 +30,6 @@ extern NSString *const en_CellTwoB;
 
 @property (nonatomic, strong) UIButton *dismissBtn;
 
-//@property (nonatomic, weak) id<EventProxy> eventProxy;
 @property (nonatomic, strong) EventProxy *eventProxy;
 
 @end
@@ -62,28 +61,29 @@ static NSString *CellTwoId = @"CellTwoId";
 - (void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo
 {
     NSInvocation *invocation = self.eventStrategy[eventName];
-    [invocation setupArguments:userInfo];
+    [invocation setArgument:&userInfo atIndex:2]; // 不用规定key
     [invocation invoke];
-    
     
     
     /*
      decorator patten
-     为userInfo增加额外参数, 这样子也不太好赋值参数
+     为userInfo增加额外参数
      */
 //    [super routerEventWithName:eventName userInfo:userInfo];
     
     
     
-    // 拆分
+    // 拆分 创建 EventProxy 对象，专门处理 Responder Chain 上传递的事件
 //    [self.eventProxy handleEvent:eventName userInfo:userInfo];
     
 }
 
 #pragma mark CellOne
-- (void)pushAViewController
+// 无用的userInfo, 当前场景
+- (void)pushAViewController:(NSDictionary *)userInfo
 {
     ViewController *vc = [ViewController new];
+    
     if (self.navigationController) {
         [self.navigationController pushViewController:vc animated:YES];
     }else {
@@ -91,17 +91,19 @@ static NSString *CellTwoId = @"CellTwoId";
     }
 }
 
-- (void)prsentAViewController
+- (void)prsentAViewController:(NSDictionary *)userInfo
 {
     ViewController *vc = [ViewController new];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark CellTwo
-- (void)pushAViewControllerWithTitle:(NSString *)aTitle
+// 取userInfo
+- (void)pushAViewControllerWithTitle:(NSDictionary *)userInfo
 {
     ViewController *vc = [ViewController new];
-    [vc.navigationController setTitle:aTitle];
+    vc.title = userInfo[@"title"];
+    
     if (self.navigationController) {
         [self.navigationController pushViewController:vc animated:YES];
     }else {
@@ -109,11 +111,12 @@ static NSString *CellTwoId = @"CellTwoId";
     }
 }
 
-- (void)prsentAViewControllerWithTitle:(NSString *)aTitle indexPath:(NSIndexPath *)aIndexPath
+- (void)prsentAViewControllerWithUserInfo:(NSDictionary *)userInfo
 {
     ViewController *vc = [ViewController new];
-    [vc.navigationController setTitle:aTitle];
-    NSLog(@"\ntitle: %@ \nindexPath: %@",aTitle, aIndexPath);
+    vc.title = userInfo[@"tiitle"];
+    
+    NSLog(@"\ntitle: %@ \nindexPath: %@",userInfo[@"tiitle"], userInfo[@"indexPath"]);
     [self presentViewController:vc animated:YES completion:nil];
 }
 
@@ -147,6 +150,12 @@ static NSString *CellTwoId = @"CellTwoId";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%s - %@", __func__, indexPath);
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 #pragma mark - Getter & Setter
@@ -155,10 +164,10 @@ static NSString *CellTwoId = @"CellTwoId";
 {
     if (!_eventStrategy) {
         _eventStrategy = @{
-                           en_CellOneA : [self createInvocationWithSelector:@selector(pushAViewController)],
-                           en_CellOneB : [self createInvocationWithSelector:@selector(prsentAViewController)],
+                           en_CellOneA : [self createInvocationWithSelector:@selector(pushAViewController:)],
+                           en_CellOneB : [self createInvocationWithSelector:@selector(prsentAViewController:)],
                            en_CellTwoA : [self createInvocationWithSelector:@selector(pushAViewControllerWithTitle:)],
-                           en_CellTwoB : [self createInvocationWithSelector:@selector(prsentAViewControllerWithTitle: indexPath:)]
+                           en_CellTwoB : [self createInvocationWithSelector:@selector(prsentAViewControllerWithUserInfo:)]
                            };
     }
     return _eventStrategy;
