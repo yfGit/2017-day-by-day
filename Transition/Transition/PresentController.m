@@ -62,7 +62,9 @@
         self.touchBlock(point);
     }
     [self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"dismiss");
+    }];
 }
 
 

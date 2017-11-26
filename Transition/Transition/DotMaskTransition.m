@@ -109,7 +109,7 @@
         
         [maskLayer addAnimation:anim forKey:nil];
         
-        self.animCompelted = ^(){
+        self.animCompelted = ^(){ // 需求来定先完成还是先移除
             [transitionContext completeTransition:YES];
             [maskLayer removeAllAnimations];
             [maskLayer removeFromSuperlayer];
