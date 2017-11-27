@@ -54,47 +54,7 @@ int main(int argc, const char * argv[]) {
         void network(void);
         network();
         
-        dispatch_semaphore_t semaphore = dispatch_semaphore_create(SemaphoreNum);
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-           
-            long value = dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            NSLog(@"semaphore");
-            
-            sleep(5);
-            long value2 = dispatch_semaphore_signal(semaphore);
-            NSLog(@"1 value %ld - value2 %ld", value, value2);
-        });
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-            long value = dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            NSLog(@"semaphore");
-            
-            sleep(2);
-            long value2 = dispatch_semaphore_signal(semaphore);
-            NSLog(@"2 value %ld - value2 %ld", value, value2);
-        });
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            long value = dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            NSLog(@"semaphore");
-            
-            sleep(3);
-            long value2 = dispatch_semaphore_signal(semaphore);
-            NSLog(@"3 value %ld - value2 %ld", value, value2);
-        });
-        
-        [[NSRunLoop currentRunLoop] run];
-        
-    }
-    
     return 0;
-    
-    
 }
 
 void network()

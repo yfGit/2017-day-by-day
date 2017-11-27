@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Lock/NSConditionLock&#x6761;&#x4ef6;&#x9501;/NSConditionLock&#x6761;&#x4ef6;&#x9501;.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Lock/NSDistributedLock---2/NSDistributedLock---2.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Lock/NSDistributedLock&#x5206;&#x5e03;&#x5f0f;&#x9501;(&#x8fdb;&#x7a0b;&#x9501;)/NSDistributedLock&#x5206;&#x5e03;&#x5f0f;&#x9501;(&#x8fdb;&#x7a0b;&#x9501;).xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Lock/Lock synchronized/Lock synchronized.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Lock/Semaphore/Semaphore.xcodeproj">
    </FileRef>
 </Workspace>
