@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Lock/NSThread/NSThread.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Lock/NSConditionLock&#x6761;&#x4ef6;&#x9501;/NSConditionLock&#x6761;&#x4ef6;&#x9501;.xcodeproj">
    </FileRef>
    <FileRef

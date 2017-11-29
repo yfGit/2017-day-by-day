@@ -11,6 +11,7 @@
 #include <pthread.h>
 
 // http://www.tanhao.me/pieces/616.html/
+// http://www.cnblogs.com/kenshincui/p/3983982.html
 
 @interface ViewController ()
 
@@ -216,6 +217,8 @@
         [obj method1];
         pthread_mutex_unlock(&mutex);
     });
+    
+    pthread_mutexattr_destroy(&mutex);
 }
 
 - (void)semaphore
